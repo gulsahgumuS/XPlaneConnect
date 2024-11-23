@@ -7,6 +7,14 @@ def monitor():
             posi = client.getPOSI()
             ctrl = client.getCTRL()
 
+            
+            lat_values = [1, 1, 1, 1, 1,1,1.0]
+            client.sendCTRL(lat_values)
+
+            get_list= []
+            client.getCTRL(get_list)
+
+
             print("Loc: (%.4f, %.4f, %.4f) Aileron: %.2f Elevator: %.2f Rudder: %.2f\n" % 
                   (posi[0], posi[1], posi[2], ctrl[1], ctrl[0], ctrl[2]))
 
